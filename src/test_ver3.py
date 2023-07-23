@@ -202,5 +202,22 @@ def viewer (times, emp, zero_prob, one_prob,
     plt.clabel("probably of one")
     plt.show()
 
+def main():
+    '''In this part, you make the command for the main part.
+
+    Data:
+        order (int): number for initial_maker
+                     and hamiltonian_maker
+        simulate_time (int): number for list_make
+    '''
+    order = 7
+    time_int = 0.0001
+    simulate_time = 400000
+    hami_mat = hamiltonian_maker(order)
+    initial_state = initial_maker(order)
+    exp_hami = exp_maker(hami_mat, time_int)
+    data_list = list_maker(initial_state, exp_hami, simulate_time)
+    viewer(*data_list)
+
 if __name__ == "__main__":
     main()
