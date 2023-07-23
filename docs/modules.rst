@@ -4,4 +4,5 @@ src
 .. toctree::
    :maxdepth: 4
 
-   test_ver3
+   nonunitary_simulation
+   unitary_simulation

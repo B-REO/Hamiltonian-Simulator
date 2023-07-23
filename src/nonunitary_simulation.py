@@ -164,6 +164,61 @@ def list_maker(init, exp_ham, sim_time):
     all_list.append(norm_list)
     return all_list
 
+def fft(time, times, emp, zero_prob, one_prob,
+        zero_real, zero_imag, one_real, one_imag, norm):
+    ''' In this part, the period at which each parameter changes can be determined by using the Fast Fourier Transform (FFT).
+
+    Args:
+        times (list, (int)): times of simulation
+        emp (list, (int)): all elements is zero
+        zero_prob(list, (float)): probably of zero state
+        one_prob(list, (float)): probably of one state
+        zero_real(list, (float)): real part of zero state
+        zero_imag(list, (float)): imaginaly part of zero state
+        one_real(list, (float)): real part of one state
+        one_imag(list, (float)): imaginaly part of one state
+        norm(list, (float)): norm of initial state
+
+    How to use:
+        select the list of result for FFT you want to see
+
+    Examples:
+        plt.plot(zero_prob_freq[1:int(len(zero_prob)/2)], zero_prob_amp[1:int(len(zero_prob)/2)])
+        #plt.plot(one_prob_freq[1:int(len(one_prob)/2)], one_prob_amp[1:int(len(one_prob)/2)])
+        
+    Caution:
+        Theoretically, the result of the FFT calculation should be close to pi, but it may be as close as a tenth of a percent. 
+
+    Returns:
+        2D plot of the FFT data list
+    '''
+    zero_prob_fft = np.fft.fft(zero_prob)
+    zero_prob_freq = np.fft.fftfreq(len(zero_prob), d=time*0.1)
+    one_prob_fft = np.fft.fft(one_prob)
+    one_prob_freq = np.fft.fftfreq(len(one_prob), d=time*0.1)
+    zero_real_fft = np.fft.fft(zero_real)
+    zero_real_freq = np.fft.fftfreq(len(zero_real), d=0.0001)
+    zero_imag_fft = np.fft.fft(zero_imag)
+    zero_imag_freq = np.fft.fftfreq(len(zero_imag), d=0.0001)
+    one_real_fft = np.fft.fft(one_real)
+    one_real_freq = np.fft.fftfreq(len(one_real), d=0.0001)
+    one_imag_fft = np.fft.fft(one_imag)
+    one_imag_freq = np.fft.fftfreq(len(one_imag), d=0.0001)
+    zero_prob_amp = abs(zero_prob_fft/(len(zero_prob)/2))
+    one_prob_amp = abs(one_prob_fft/(len(one_prob)/2))
+    zero_real_amp = abs(zero_real_fft/(len(zero_real)/2))
+    zero_imag_amp = abs(zero_imag_fft/(len(zero_imag)/2))
+    one_real_amp = abs(one_real_fft/(len(one_real)/2))
+    one_imag_amp = abs(one_imag_fft/(len(one_imag)/2))
+    plt.plot(zero_prob_freq[1:int(len(zero_prob)/2)], zero_prob_amp[1:int(len(zero_prob)/2)])
+    plt.plot(one_prob_freq[1:int(len(one_prob)/2)], one_prob_amp[1:int(len(one_prob)/2)])
+    plt.plot(zero_real_freq[1:int(len(zero_real)/2)], zero_real_amp[1:int(len(zero_prob)/2)])
+    plt.plot(zero_imag_freq[1:int(len(zero_imag)/2)], zero_imag_amp[1:int(len(one_prob)/2)])
+    plt.plot(one_real_freq[1:int(len(one_real)/2)], one_real_amp[1:int(len(zero_prob)/2)])
+    plt.plot(one_imag_freq[1:int(len(one_imag)/2)], one_imag_amp[1:int(len(one_prob)/2)])
+    plt.xscale("log")
+    plt.show()
+    
 def viewer (times, emp, zero_prob, one_prob,
             zero_real, zero_imag, one_real, one_imag, norm):
     ''' In this part, you make 3D model of result.

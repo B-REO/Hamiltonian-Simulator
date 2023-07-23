@@ -10,7 +10,8 @@ Welcome to test_ver3's documentation!
    :maxdepth: 4
    :caption: Contents:
 
-   test_ver3
+   nonunitary_simulation
+   unitary_simulation
 
 Indices and tables
 ==================

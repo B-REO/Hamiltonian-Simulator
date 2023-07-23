@@ -19,8 +19,7 @@
         <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
-    <link rel="prev" title="Welcome to test_ver3&#39;s documentation!" href="index.html" /> 
+    <link rel="search" title="検索" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,16 +45,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">test_ver3 module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#test_ver3.exp_maker"><code class="docutils literal notranslate"><span class="pre">exp_maker()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test_ver3.hamiltonian_maker"><code class="docutils literal notranslate"><span class="pre">hamiltonian_maker()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test_ver3.initial_maker"><code class="docutils literal notranslate"><span class="pre">initial_maker()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test_ver3.list_maker"><code class="docutils literal notranslate"><span class="pre">list_maker()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test_ver3.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test_ver3.viewer"><code class="docutils literal notranslate"><span class="pre">viewer()</span></code></a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nonunitary_simulation.html">nonunitary_simulation module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitary_simulation.html">unitary_simulation module</a></li>
 </ul>
 
         </div>
@@ -82,183 +74,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-test_ver3">
-<span id="test-ver3-module"></span><h1>test_ver3 module<a class="headerlink" href="#module-test_ver3" title="この見出しへのパーマリンク"></a></h1>
-<p>This is the first version of SnH(Simulation for nonunitary Hamiltonian).</p>
-<p>In this program, you get a random Hamiltonian and initial state</p>
-<p>and simulate time-development of Hamiltonian.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="test_ver3.exp_maker">
-<span class="sig-prename descclassname"><span class="pre">test_ver3.</span></span><span class="sig-name descname"><span class="pre">exp_maker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/test_ver3.html#exp_maker"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#test_ver3.exp_maker" title="この定義へのパーマリンク"></a></dt>
-<dd><p>In this part, you get time development of nonunitary Hamiltonian.</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mat</strong> (<em>np.array</em><em>(</em><em>2*2</em><em>) </em><em>(</em><em>complex</em><em>)</em>) -- nonunitary Hamiltonian</p></li>
-<li><p><strong>time_int</strong> (<em>float</em>) -- time interval for time-development</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>time development of nonunitary Hamiltonian</p>
-</dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.array(2*2) (complex)</p>
-</dd>
-</dl>
-<p class="rubric">サンプル</p>
-<p>Usages</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time_Hamitonian_ver3</span> <span class="k">as</span> <span class="nn">t_H</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t_H</span><span class="o">.</span><span class="n">exp_maker</span><span class="p">(</span><span class="n">t_H</span><span class="o">.</span><span class="n">hamiltonian_maker</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="mf">0.0001</span><span class="p">))</span>
-<span class="go">[[ 1.00000136e+00-9.00322588e-05j  1.16144185e-05-3.11963834e-05j]</span>
-<span class="go"> [-1.15639188e-05-3.12081853e-05j  9.99998633e-01-9.14366202e-05j]]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="test_ver3.hamiltonian_maker">
-<span class="sig-prename descclassname"><span class="pre">test_ver3.</span></span><span class="sig-name descname"><span class="pre">hamiltonian_maker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/test_ver3.html#hamiltonian_maker"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#test_ver3.hamiltonian_maker" title="この定義へのパーマリンク"></a></dt>
-<dd><p>In this part, you get a random nonunitary Hamiltonian.</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<em>int</em>) -- parameter to keep the norm of the initial sate as 1</p>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>nonunitary Hamiltonian</p>
-</dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.array(2*2) (complex)</p>
-</dd>
-</dl>
-<p class="rubric">サンプル</p>
-<p>Usage</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">time_Hamitonian_ver3</span><span class="o">.</span><span class="n">hamiltonian_maker</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="go">[[0.29128271+0.52816302j 0.38886643+0.75013579j]</span>
-<span class="go"> [0.45691417+0.19569145j 0.30565112+0.57487933j]]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="test_ver3.initial_maker">
-<span class="sig-prename descclassname"><span class="pre">test_ver3.</span></span><span class="sig-name descname"><span class="pre">initial_maker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/test_ver3.html#initial_maker"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#test_ver3.initial_maker" title="この定義へのパーマリンク"></a></dt>
-<dd><p>In this part, you get a random quantum state.</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<em>int</em>) -- parameter to accuary of quantume state</p>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>quantum state</p>
-</dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.array(2*1) (complex)</p>
-</dd>
-</dl>
-<p class="rubric">サンプル</p>
-<p>Usage</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">time_Hamitonian_ver3</span><span class="o">.</span><span class="n">initial_maker</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="go">[(0.76426372+0.26254808j), (0.58137188+0.094815771j)]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="test_ver3.list_maker">
-<span class="sig-prename descclassname"><span class="pre">test_ver3.</span></span><span class="sig-name descname"><span class="pre">list_maker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_ham</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/test_ver3.html#list_maker"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#test_ver3.list_maker" title="この定義へのパーマリンク"></a></dt>
-<dd><p>In this part, you get datalist of time-develpoment.</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>init</strong> (<em>np.array</em><em>(</em><em>2*1</em><em>)</em><em>, </em><em>(</em><em>complex</em><em>)</em>) -- initial quantum state</p></li>
-<li><p><strong>exp_ham</strong> (<em>np.array</em><em>(</em><em>2*2</em><em>)</em><em>, </em><em>(</em><em>complex</em><em>)</em>) -- time-development of Hamiltonian</p></li>
-<li><p><strong>sim_time</strong> (<em>int</em>) -- number of times Hamiltonian is acted upon</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p><p>time_list (int): time to try</p>
-<p>emp (int): the list whose compornents are zero</p>
-<p>zero_prob (float): probably of zero state</p>
-<p>one_prob (float): probably of one state</p>
-<p>zero_real (float): real part of zero state</p>
-<p>zero_imag (float): imaginaly part of zero state</p>
-<p>one_real (float): real part of one state</p>
-<p>one_imag (float): imaginaly part of one state</p>
-<p>norm_list (float): norm of quantum state</p>
-<p>They are output in a single list. The order of the elements in the list is the same as above.</p>
-</p>
-</dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
-<dd class="field-odd"><p>time_list (int)</p>
-</dd>
-</dl>
-<p class="rubric">サンプル</p>
-<p>Usage</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time_Hamitonian_ver3</span> <span class="k">as</span> <span class="nn">t_H</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">t_H</span><span class="o">.</span><span class="n">initial_maker</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">t_H</span><span class="o">.</span><span class="n">hamiltonian_maker</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">t_H</span><span class="o">.</span><span class="n">exp_maker</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">t_H</span><span class="o">.</span><span class="n">list_maker</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-<span class="go">&lt;class &#39;list&#39;&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="test_ver3.main">
-<span class="sig-prename descclassname"><span class="pre">test_ver3.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/test_ver3.html#main"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#test_ver3.main" title="この定義へのパーマリンク"></a></dt>
-<dd><p>In this part, you make the command for the main part.</p>
-<dl>
-<dt>Data:</dt><dd><dl class="simple">
-<dt>order (int): number for initial_maker</dt><dd><p>and hamiltonian_maker</p>
-</dd>
-</dl>
-<p>simulate_time (int): number for list_make</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="test_ver3.viewer">
-<span class="sig-prename descclassname"><span class="pre">test_ver3.</span></span><span class="sig-name descname"><span class="pre">viewer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">one_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_real</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_imag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">one_real</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">one_imag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/test_ver3.html#viewer"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#test_ver3.viewer" title="この定義へのパーマリンク"></a></dt>
-<dd><p>In this part, you make 3D model of result.</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>times</strong> (<em>list</em><em>, </em><em>(</em><em>int</em><em>)</em>) -- times of simulation</p></li>
-<li><p><strong>emp</strong> (<em>list</em><em>, </em><em>(</em><em>int</em><em>)</em>) -- all elements is zero</p></li>
-<li><p><strong>zero_prob</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- probably of zero state</p></li>
-<li><p><strong>one_prob</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- probably of one state</p></li>
-<li><p><strong>zero_real</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- real part of zero state</p></li>
-<li><p><strong>zero_imag</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- imaginaly part of zero state</p></li>
-<li><p><strong>one_real</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- real part of one state</p></li>
-<li><p><strong>one_imag</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- imaginaly part of one state</p></li>
-<li><p><strong>norm</strong> (<em>list</em><em>, </em><em>(</em><em>float</em><em>)</em>) -- norm of initial state</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="simple">
-<dt>How to use:</dt><dd><p>select the combination of list you want to see</p>
-</dd>
-</dl>
-<p class="rubric">サンプル</p>
-<p>ax.plot(time, zero_real, emp, &quot;-&quot;)
-#ax.plot(time, emp, zero_imag, &quot;-&quot;)</p>
-<dl class="field-list simple">
-<dt class="field-odd">戻り値<span class="colon">:</span></dt>
-<dd class="field-odd"><p>3D plot of the combination of data list</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="test-ver3-module">
+<h1>test_ver3 module<a class="headerlink" href="#test-ver3-module" title="この見出しへのパーマリンク"></a></h1>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to test_ver3&#39;s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+          <footer>
 
   <hr/>
 
