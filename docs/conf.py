@@ -11,7 +11,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('../src/'))
 
-project = 'test_ver3'
+project = 'Simulation for nonunitary Hamiltonian'
 copyright = '2023, Leo'
 author = 'Leo'
 
