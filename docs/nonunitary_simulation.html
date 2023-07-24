@@ -90,6 +90,7 @@
 <p>This is the first version of SnH(Simulation for nonunitary Hamiltonian).</p>
 <p>In this program, you get a random Hamiltonian and initial state</p>
 <p>and simulate time-development of Hamiltonian.</p>
+<p>Note that running this program may perform an enormous number of calculations and may place a significant load on the battery.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nonunitary_simulation.exp_maker">
 <span class="sig-prename descclassname"><span class="pre">nonunitary_simulation.</span></span><span class="sig-name descname"><span class="pre">exp_maker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nonunitary_simulation.html#exp_maker"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#nonunitary_simulation.exp_maker" title="この定義へのパーマリンク"></a></dt>
@@ -146,7 +147,7 @@
 #plt.plot(one_prob_freq[1:int(len(one_prob)/2)], one_prob_amp[1:int(len(one_prob)/2)])</p>
 <div class="admonition caution">
 <p class="admonition-title">注意</p>
-<p>Theoretically, the result of the FFT calculation should be close to pi, but it may be as close as a tenth of a percent.</p>
+<p>Theoretically, the result of the FFT calculation should be close to 2pi, but it may be as close as a tenth of a percent.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">戻り値<span class="colon">:</span></dt>

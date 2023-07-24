@@ -3,6 +3,8 @@
 In this program, you get a random Hamiltonian and initial state 
 
 and simulate time-development of Hamiltonian.
+
+Note that running this program may perform an enormous number of calculations and may place a significant load on the battery.
 """
 
 import math
@@ -187,7 +189,7 @@ def fft(time, times, emp, zero_prob, one_prob,
         #plt.plot(one_prob_freq[1:int(len(one_prob)/2)], one_prob_amp[1:int(len(one_prob)/2)])
         
     Caution:
-        Theoretically, the result of the FFT calculation should be close to pi, but it may be as close as a tenth of a percent. 
+        Theoretically, the result of the FFT calculation should be close to 2pi, but it may be as close as a tenth of a percent. 
 
     Returns:
         2D plot of the FFT data list
